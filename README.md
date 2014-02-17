@@ -1,4 +1,7 @@
 Wrakendus
 =========
 
-Siia tuleb veel täpsem kirjeldus
+Rühma liikmed:
+Helen Pajor
+Leelo Rand
+Aivo Toots
