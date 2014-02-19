@@ -11,6 +11,6 @@ Prototüübi failid leiate siit: [> prototüübi failid <](https://github.com/pa
 Prototüübi töötav versioon HTML-failidena on leitav siit: [> Tavakasutaja liides <](http://hpclub.pri.ee/wrakendus/prototyyp/user) / [> Administraatori liides <](http://hpclub.pri.ee/wrakendus/prototyyp/admin)
 
 Rühma liikmed:
-Helen Pajor - helenpajor
-Leelo Rand - leelokas
-Aivo Toots - pakisupp - (Vitaos ka, aga see ei ole tegelik GitHub'i kasutaja, vaid SourceTree kontos olnud nimi)
+* Helen Pajor - helenpajor
+* Leelo Rand - leelokas
+* Aivo Toots - pakisupp - (Vitaos ka, aga see ei ole tegelik GitHub'i kasutaja, vaid SourceTree kontos olnud nimi)
