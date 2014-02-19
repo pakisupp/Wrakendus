@@ -1,6 +1,15 @@
 ﻿Wrakendus
 =========
 
+"Wrakendus on õpipäevik, mis on peamiselt suunatud tudengitele ja õppejõududele, kuid mida võib kasutada igaüks, kes soovib saada ülevaadet oma ajakulust erinevatele tegevustele. 
+Wrakendus võimaldab kasutajal näha kas iseenda ajakulu erinevatele õppeainetele ja tegevustele või liituda mõne grupiga ning näha oma tulemusi teiste grupiliikmetega võrreldes.
+Wrakenduse admin kasutajatel on võimalik vaadata terve kasutajaskonna või valitud grupi tulemusi. See funktsionaalsus on eeskätt mõeldud näiteks mõnele õppejõule teadustöö tegemiseks või siis hindamiseks, kas õpilaste tegelik ajakulu on vastavuses aine eest saadavate ainepunktidega."
+
+
+Prototüübi failid leiate siit: [> prototüübi failid <](https://github.com/pakisupp/Wrakendus/tree/master/prototyyp)
+
+Prototüübi töötav versioon HTML-failidena on leitav siit: [> Tavakasutaja liides <](http://hpclub.pri.ee/wrakendus/prototyyp/user) / [> Administraatori liides <](http://hpclub.pri.ee/wrakendus/prototyyp/admin)
+
 Rühma liikmed:
 Helen Pajor - helenpajor
 Leelo Rand - leelokas
