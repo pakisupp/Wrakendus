@@ -7,10 +7,35 @@
 	height: 40px;
 }
 
+
+
+h1, h2, h3, h4, h6 {
+	font: normal 175% 'century gothic', arial, sans-serif;
+	color: #43423F;
+}
+
 h1 {
-    font-family: Verdana;
-    color: #FFFFFF;
-    text-align: center;
+	text-align: center;
+}
+
+h2 {
+	font: normal 175% 'century gothic', arial, sans-serif;
+	color: #1293EE;
+}
+
+h4 {
+	font: normal 150% 'century gothic', arial, sans-serif;
+	color: #43423F;
+}
+
+h5, h6 {
+	margin: 0;
+	padding: 0 0 5px 0;
+	font: normal 120% arial, sans-serif;
+}
+
+h5 {
+	color: #1293EE;
 }
 
 form {
@@ -33,7 +58,7 @@ textarea {
 	color: #777;
 }
 
-#loginForm {
+#tekstiala {
     border-left: 1px solid #888;
     border-right: 1px solid #888;
     border-bottom: 1px solid #888;
@@ -43,8 +68,18 @@ textarea {
     padding-left: 20px;
     padding-bottom: 20px;
     box-shadow: 3px 3px 3px #444;
-    font-family: Verdana, Arial, sans-serif;
     font-size: 0.8em;
+}
+
+#tutvustus {
+    position: relative;
+    top: 10px;
+}
+
+#autorid {
+	position: relative;
+	text-align: center;
+	top: 20px;
 }
 
 #defaultLogin {
@@ -56,7 +91,6 @@ textarea {
 	width: 100%;
 	clear: both;
 }
-
 
 button#facebook {
     border-color: #2d5073;

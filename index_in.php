@@ -44,11 +44,26 @@ if (!$_SESSION['logged_in_email']) {
 		</script>
 	</head>
 	<body>
+  
+	<div id="header"><h1>In time</h1></div>
+	
+	<div id="tekstiala">
+		
 		<h2>Tere, <?php echo $_SESSION['name']; ?></h2>
 		<?php if ($_SESSION['user_login_type'] == "facebook") { ?>
-			<p><a href="#" onClick="FBLogout();">Logi välja</a></p>
+			<h6><a href="#" onClick="FBLogout();">Logi välja</a></h6>
 		<?php } else { ?>
-			<p><a href="src/php/login.php?action=logOUT">Logi välja</a></p>
+			<h6><a href="src/php/login.php?action=logOUT">Logi välja</a></h6>
 		<?php } ?>
-	</body>
+		
+		<div id="tutvustus">
+			<h4> In Time on õpipäevik, mida võib kasutada igaüks, kes soovib saada ülevaadet oma ajakulust erinevatele tegevustele.</h4>
+		</div>
+		
+		<div id="autorid">
+			<h6>Wrakendus: Aivo, Helen, Leelo</h6>
+		</div>
+	</div>
+	
+    </body>
 </html>

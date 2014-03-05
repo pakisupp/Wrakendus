@@ -47,7 +47,7 @@ if (isset($_SESSION['logged_in_email'])) {
 	</head>
 	<body>
 		<div id="header"><h1>In time</h1></div>
-	        <div id="loginForm">
+	        <div id="tekstiala">
 	            <div id="defaultLogin">
 	                <form name="input" action="src/php/login.php?action=logIN" method="post">
 	            	    <p>Kasutajanimi: <input type="text" name="username"/></p>
@@ -59,6 +59,5 @@ if (isset($_SESSION['logged_in_email'])) {
 					<button type="button" id="facebook" onclick="FBLogin()">Sisene Facebookiga</button>
 				</div>
 			</div>
-		
 	</body>
 </html>
