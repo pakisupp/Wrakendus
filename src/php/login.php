@@ -11,18 +11,19 @@ switch ( $_GET['action'] ) {
 		$username = $_POST['username'];
 		$password_md5 = md5 ( $_POST['password'] );
 		
+		// Kontrollime andmebaasist, kas sisestatud andmetega kasutaja ekisteerib
 		$query = 'SELECT * FROM kasutajad WHERE kasutajanimi = "'.$username.'" AND parool = "'.$password_md5.'"';
 		$result = $mysqli->query($query);
 		
 		if ( $result->num_rows == 1 ) {
 		
+			// Leiame sisestatud andmetega kasutaja kohta veel andmeid ja salvestame need sessiooni
 			$query = 'SELECT * FROM kasutajad WHERE kasutajanimi = "'.$username.'" AND parool = "'.$password_md5.'"';
 			$result = $mysqli->query($query);
 			$row = $result->fetch_row();
 			
 			$_SESSION['logged_in_email'] = $row[5];
 			$_SESSION['name'] = $row[6];
-			$_SESSION['user_login_type'] = "normal";
 				
 			header ( 'Location: ../../index.php' );
 
@@ -40,6 +41,7 @@ switch ( $_GET['action'] ) {
 		require_once 'conf.php';
 		require_once 'facebook.php';
 		
+		// Loome ühenduse Facebookiga
 		$appid 		= APP_ID;
 		$appsecret  = APP_SECRET;
 		$facebook   = new Facebook(array(
@@ -62,7 +64,8 @@ switch ( $_GET['action'] ) {
 				exit();
 			
 			}
-		
+			
+			// Kontrollime, kas sisseloginud kasutaja andmed on salvestatud andmebaasi. Kui ei, salvestame need	
 			$query = 'SELECT * FROM kasutajad WHERE email = "'.$user_profile["email"].'"';
 			$result = $mysqli->query($query);
 		
@@ -75,7 +78,6 @@ switch ( $_GET['action'] ) {
 		
 			$_SESSION['logged_in_email'] = $user_profile["email"];
 			$_SESSION['name'] = $user_profile["name"];
-			$_SESSION['user_login_type'] = "facebook";
 				
 		}
 		

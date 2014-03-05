@@ -4,6 +4,8 @@ session_start();
 
 require_once('src/php/conf.php');
 
+// Kui kasutaja on juba sisse logitud, suuname ta edasi
+
 if (isset($_SESSION['logged_in_email'])) {
 
 	header ( 'Location: index_in.php' );
@@ -18,6 +20,7 @@ if (isset($_SESSION['logged_in_email'])) {
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 		<title>Wrakendus - Login</title>
 		<link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+		<!-- Algus - Facebook'i ühendus ja sisselogimise nupp -->
 		<script type="text/javascript">
 			window.fbAsyncInit = function() {
 				FB.init({
@@ -44,6 +47,7 @@ if (isset($_SESSION['logged_in_email'])) {
 				}, {scope: 'email'});
 			}
 		</script>
+		<!-- Lõpp - Facebook'i ühendus ja sisselogimise nupp -->
 	</head>
 	<body>
 		<div id="header"><h1>In time</h1></div>
