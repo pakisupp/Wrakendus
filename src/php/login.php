@@ -10,27 +10,79 @@ switch ( $_GET['action'] ) {
 
 		$username = $_POST['username'];
 		$password_md5 = md5 ( $_POST['password'] );
-
-		$sqlcmd = 'SELECT * FROM kasutajad WHERE kasutajanimi = "'.$username.'" AND parool = "'.$password_md5.'"';
-		$result = mysql_query ( $sqlcmd );
-		$row = mysql_fetch_row($result);
-
-		$count = mysql_num_rows ( $result );
-
-		if ( $count == 1 ) {
 		
-			$_SESSION['logged_in_email'] = $row['email'];
-
-			header ( 'Location: ../../index4.php' );
+		$query = 'SELECT * FROM kasutajad WHERE kasutajanimi = "'.$username.'" AND parool = "'.$password_md5.'"';
+		$result = $mysqli->query($query);
+		
+		if ( $result->num_rows == 1 ) {
+		
+			$query = 'SELECT * FROM kasutajad WHERE kasutajanimi = "'.$username.'" AND parool = "'.$password_md5.'"';
+			$result = $mysqli->query($query);
+			$row = $result->fetch_row();
+			
+			$_SESSION['logged_in_email'] = $row[5];
+			$_SESSION['name'] = $row[6];
+			$_SESSION['user_login_type'] = "normal";
+				
+			header ( 'Location: ../../index.php' );
 
 		} else {
 
-			print "Vale kasutajanimi ja/vıi parool!";
+			print "Vale kasutajanimi ja/v√µi parool!";
 			print '<p><a href="javascript:history.back(0)">&lt;- Tagasi</a></p>';
 
 		}
 
 	break;
+
+	case "FB_logIN":
+
+		require_once 'conf.php';
+		require_once 'facebook.php';
+		
+		$appid 		= APP_ID;
+		$appsecret  = APP_SECRET;
+		$facebook   = new Facebook(array(
+			'appId' => $appid,
+			'secret' => $appsecret,
+			'cookie' => TRUE,
+		));
+	
+		$fbuser = $facebook->getUser();
+	
+		if ($fbuser) {
+		
+			try {
+		    
+		    	$user_profile = $facebook->api('/me');
+		
+			} catch (Exception $e) {
+			
+				echo $e->getMessage();
+				exit();
+			
+			}
+		
+			$query = 'SELECT * FROM kasutajad WHERE email = "'.$user_profile["email"].'"';
+			$result = $mysqli->query($query);
+		
+			if($result->num_rows < 1) {
+		
+				$query = 'INSERT INTO kasutajad SET kasutajanimi="'.$user_profile["username"].'", nimi="'.$user_profile["name"].'", email="'.$user_profile["email"].'", fb_id="'.$fbuser.'", sugu="'.$user_profile["gender"].'", registreerunud=now(), viimane_sisselogimine=now()';
+				$results = $mysqli->query($query);
+		
+			}
+		
+			$_SESSION['logged_in_email'] = $user_profile["email"];
+			$_SESSION['name'] = $user_profile["name"];
+			$_SESSION['user_login_type'] = "facebook";
+				
+		}
+		
+		header ( 'Location: ../../index.php' );
+
+	break;
+
 
 	case "logOUT":
 
