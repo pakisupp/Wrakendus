@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_ut_intime_domain_AppUser" object="${appuser}" path="/appusers" z="wTZ3tUDfE6/TPr+GfxcA+RQpqRg=">
+        <field:display field="password" id="s_ee_ut_intime_domain_AppUser_password" object="${appuser}" z="FDMl07Em7RkagTjtuBU7n/+nsWM="/>
+        <field:display field="username" id="s_ee_ut_intime_domain_AppUser_username" object="${appuser}" z="i6VFrXMkUts1dG/Rk/+qA6OB4BU="/>
+        <field:display field="EMail" id="s_ee_ut_intime_domain_AppUser_eMail" object="${appuser}" z="UBWDsvEBhzNQxYbjzOoP1kWIFn8="/>
+        <field:display field="openIdIdentifier" id="s_ee_ut_intime_domain_AppUser_openIdIdentifier" object="${appuser}" z="sdBhOVpR3Z4DqSvvX5Q493FcvuQ="/>
+        <field:display field="fullName" id="s_ee_ut_intime_domain_AppUser_fullName" object="${appuser}" z="anN0w85y8pzS07uOF0vbVnWZs0U="/>
+    </page:show>
+</div>

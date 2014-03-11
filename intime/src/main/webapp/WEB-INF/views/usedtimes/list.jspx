@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_ut_intime_domain_UsedTime" items="${usedtimes}" z="msolWTfZh0kmJ25TkuOcHN34bqU=">
+        <table:table data="${usedtimes}" id="l_ee_ut_intime_domain_UsedTime" path="/usedtimes" z="6J+4FguB3mOfQ2k1lH3NKUJ+2c0=">
+            <table:column date="true" dateTimePattern="${usedTime_workdate_date_format}" id="c_ee_ut_intime_domain_UsedTime_workDate" property="workDate" z="DeV+EeElrGiDzQGSPR4aziy+Dqc="/>
+            <table:column id="c_ee_ut_intime_domain_UsedTime_hours" property="hours" z="gU5u9whmiREJW+II/Tg74R0CMJU="/>
+            <table:column id="c_ee_ut_intime_domain_UsedTime_subject" property="subject" z="lY68pLcI5GjhmC6sXtFldr33bXo="/>
+            <table:column id="c_ee_ut_intime_domain_UsedTime_owner" property="owner" z="Zkg9Xm0en0XgZ6DUIYfk2ri+sY8="/>
+        </table:table>
+    </page:list>
+</div>

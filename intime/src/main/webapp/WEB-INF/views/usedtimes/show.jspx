@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_ut_intime_domain_UsedTime" object="${usedtime}" path="/usedtimes" z="2CAXvBFHsAHEUqfGkGHPZFcSk4c=">
+        <field:display date="true" dateTimePattern="${usedTime_workdate_date_format}" field="workDate" id="s_ee_ut_intime_domain_UsedTime_workDate" object="${usedtime}" z="Lt2hO7PRMCvR87EQsgV1m/PHyaA="/>
+        <field:display field="hours" id="s_ee_ut_intime_domain_UsedTime_hours" object="${usedtime}" z="0U9arjZYIwJIxaW1QsKLg2uJiPo="/>
+        <field:display field="subject" id="s_ee_ut_intime_domain_UsedTime_subject" object="${usedtime}" z="/cV8rerH4hYcRoJNx9rhTdqdXw4="/>
+        <field:display field="owner" id="s_ee_ut_intime_domain_UsedTime_owner" object="${usedtime}" z="jZKocyGQceiXpr6k+cIPFiKcKgc="/>
+    </page:show>
+</div>

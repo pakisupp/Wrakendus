@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_ut_intime_domain_AppUser" items="${appusers}" z="Rhe0mkAmUh2ghv4C8+h/+4ZZIwo=">
+        <table:table data="${appusers}" id="l_ee_ut_intime_domain_AppUser" path="/appusers" z="IwA2LDhoSPDWaldTwc9SSaxc86w=">
+            <table:column id="c_ee_ut_intime_domain_AppUser_password" property="password" z="ow9T1rGGeJqQ6rd9CH3sZ2oM/gI="/>
+            <table:column id="c_ee_ut_intime_domain_AppUser_username" property="username" z="AOYnyZ6NxmIXRdyLk1QezOBJ4rk="/>
+            <table:column id="c_ee_ut_intime_domain_AppUser_eMail" property="EMail" z="9dymC5QLarmXzKmA02ZGDNfs3jI="/>
+            <table:column id="c_ee_ut_intime_domain_AppUser_openIdIdentifier" property="openIdIdentifier" z="MP/+TehSN8JTR/nN/q9jzKS/rvc="/>
+            <table:column id="c_ee_ut_intime_domain_AppUser_fullName" property="fullName" z="/DJN8LLllJLsR67HjXcE+/wRDuc="/>
+        </table:table>
+    </page:list>
+</div>
