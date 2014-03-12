@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>intime</display-name>
-  <description>Roo generated wrangler application</description>
+  <description>Roo generated intime application</description>
   <context-param>
     <param-name>defaultHtmlEscape</param-name>
     <param-value>true</param-value>
@@ -54,7 +54,7 @@
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
   <servlet>
-    <servlet-name>wrangler</servlet-name>
+    <servlet-name>intime</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
@@ -63,7 +63,7 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>wrangler</servlet-name>
+    <servlet-name>intime</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   <session-config>
