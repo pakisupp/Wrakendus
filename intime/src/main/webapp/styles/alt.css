@@ -37,7 +37,7 @@ body {
 }
 
 #menu {
-    background: #eee;
+    background: #BEEBFE;
   	position:relative;
   	float:right;  	
   	left:0px;
@@ -65,22 +65,22 @@ body {
 
 #menu h2 {
 	color: #fff;
-	background: #648C1D;
+	background: #64B1D1;
 	text-transform: uppercase;
 	font-weight:bold;
 	font-size: 12px;
 }
 
 #menu a {
-	color: #666666;
-	background: #efefef;
+	color: #509CBB;
+	background: #BEEBFE;
 	text-decoration: none;
 	padding: 2px 12px;
 }
 
 #menu a:hover {
-	color: #648C1D;
-	background: #fff;
+	color: #509CBB;
+	background: #EBF8FE;
 }
 
 #footer {
@@ -94,7 +94,7 @@ body {
 	float:left;
 }
 
-#footer a:link {color: #7db223;}
+#footer a:link {color: #509CBB;}
 
 .quicklinks {
 	clear:both; 
@@ -146,7 +146,7 @@ a.menu, a.menu:link, a.menu:visited {display:block; width:150px; height:25px;}
 
 h1,h2,h3 {
 	font-family: Helvetica, sans-serif;
-	color: #7db223;
+	color: #509CBB;
 }
 
 h1 {
@@ -196,7 +196,7 @@ tr:nth-child(even) {
 }
 
 a:link {
-	color: #7db223;
+	color: #509CBB;
 }
 
 a:hover {
@@ -204,11 +204,11 @@ a:hover {
 }
 
 a:active {
-	color: #7db223;
+	color: #509CBB;
 }
 
 a:visited {
-	color: #7db223;
+	color: #509CBB;
 }
 
 li {
