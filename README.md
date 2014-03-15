@@ -1,4 +1,4 @@
-﻿Wrakendus
+﻿﻿Wrakendus
 =========
 
 "Wrakendus on õpipäevik, mis on peamiselt suunatud tudengitele ja õppejõududele, kuid mida võib kasutada igaüks, kes soovib saada ülevaadet oma ajakulust erinevatele tegevustele. 
@@ -10,7 +10,13 @@ Prototüübi failid leiate siit: [> prototüübi failid <](https://github.com/pa
 
 Prototüübi töötav versioon HTML-failidena on leitav siit: [> Tavakasutaja liides <](http://hpclub.pri.ee/wrakendus/prototyyp/user) / [> Administraatori liides <](http://hpclub.pri.ee/wrakendus/prototyyp/admin)
 
+[> Testkeskkond (2. etapp) <] (http://hpclub.pri.ee/wrakendus/)
+
+[> Testkeskkond alates 3. etapist <] (http://95.85.35.177:8080/intime/)
+
 Rühma liikmed:
 * Helen Pajor - helenpajor
 * Leelo Rand - leelokas
 * Aivo Toots - pakisupp - (Vitaos ka, aga see ei ole tegelik GitHub'i kasutaja, vaid SourceTree kontos olnud nimi)
+
+
