@@ -1,4 +1,4 @@
-package ee.ut.intime;
+package ee.ut.intime.service;
 
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.userdetails.UserDetails;

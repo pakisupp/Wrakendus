@@ -37,6 +37,6 @@
         </authentication-provider>
     </authentication-manager>
     
-	<beans:bean id="openIdUserService" class="ee.ut.intime.OpenIdUserDetailsService" />  
+	<beans:bean id="openIdUserService" class="ee.ut.intime.service.OpenIdUserDetailsService" />  
     
 </beans:beans>
