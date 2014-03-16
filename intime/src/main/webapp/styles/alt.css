@@ -1,7 +1,7 @@
 /* main elements */
 
 body,div,td {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 	font-size: 12px;
 	color: #666;
 }
@@ -34,10 +34,13 @@ body {
 #main {
 	overflow:hidden;
 	display:box;
+	border-radius: 6px;
 }
 
 #menu {
     background: #BEEBFE;
+    border-radius: 6px;
+	padding: 0px;
   	position:relative;
   	float:right;  	
   	left:0px;
@@ -48,7 +51,7 @@ body {
 #menu ul{
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 2px 4px;
 }
 
 #menu ul li{
@@ -61,6 +64,8 @@ body {
 	margin: 0;
 	padding: 2px 6px;
 	color:#FFFFFF;
+	border-radius: 6px;
+	box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.1);
 }
 
 #menu h2 {
@@ -69,13 +74,16 @@ body {
 	text-transform: uppercase;
 	font-weight:bold;
 	font-size: 12px;
+	padding: 6px 10px;
+	margin: 4px 0px;
+	vertical-align: middle;
 }
 
 #menu a {
 	color: #509CBB;
 	background: #BEEBFE;
 	text-decoration: none;
-	padding: 2px 12px;
+	padding: 2px 10px;
 }
 
 #menu a:hover {
@@ -145,24 +153,23 @@ a.menu, a.menu:link, a.menu:visited {display:block; width:150px; height:25px;}
 /* text styles */
 
 h1,h2,h3 {
-	font-family: Helvetica, sans-serif;
+	font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 	color: #509CBB;
 }
 
 h1 {
-	font-size: 20px;
+	font-size: 24px;
 	line-height: 26px;
 }
 
 h2 {
-	font-size: 18px;
+	font-size: 22px;
 	line-height: 20px;
 }
 
 h3 {
-	font-size: 15px;
+	font-size: 20px;
 	line-height: 21px;
-	color:#555;
 }
 
 h4 {
@@ -171,6 +178,7 @@ h4 {
 }
 
 .errors {
+	font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 	color: red;
 	font-weight: bold;
 	display: block;
@@ -178,6 +186,7 @@ h4 {
 }
 
 a {
+	font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 	text-decoration: underline;
 	font-size: 12px;
 }
@@ -185,6 +194,7 @@ a {
 a img {
 	border: 0 none;
 	vertical-align: middle;
+	border-radius: 6px;
 }
 
 tr:nth-child(odd) {
@@ -366,4 +376,5 @@ fieldset th {
 .flag {
 	height: 11px;
 	width: 16px;
+	border-radius: 0px;
 }
