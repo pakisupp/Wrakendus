@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import ee.ut.intime.domain.AppUser;
+import ee.ut.intime.domain.Subject;
 
 @Service
 @Configurable
@@ -33,13 +34,21 @@ public class InsertTestData implements ApplicationListener<ContextRefreshedEvent
 	        user.setUsername("user");
 	        user.setFullName("John Q Public");
 	        user.setPassword("user");
+	        user.setEMail("user@asd.ee");
 	        user.persist();
 	        
 	        user = new AppUser();
 	        user.setUsername("admin");
 	        user.setFullName("Admin");
 	        user.setPassword("admin");
+	        user.setEMail("admin@asd.ee");
 	        user.persist();
+	        
+	        Subject subject = new Subject();
+	        subject.setCode("MTAT.03.230");
+	        subject.setName("Veebirakenduste loomine");
+	        subject.setOwner(user);
+	        subject.persist();
 	  }
 
 	

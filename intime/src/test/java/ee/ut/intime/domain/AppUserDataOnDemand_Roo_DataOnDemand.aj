@@ -49,11 +49,17 @@ privileged aspect AppUserDataOnDemand_Roo_DataOnDemand {
     
     public void AppUserDataOnDemand.setPassword(AppUser obj, int index) {
         String password = "password_" + index;
+        if (password.length() > 30) {
+            password = password.substring(0, 30);
+        }
         obj.setPassword(password);
     }
     
     public void AppUserDataOnDemand.setUsername(AppUser obj, int index) {
         String username = "username_" + index;
+        if (username.length() > 30) {
+            username = new Random().nextInt(10) + username.substring(1, 30);
+        }
         obj.setUsername(username);
     }
     

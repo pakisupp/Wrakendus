@@ -5,10 +5,10 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Transient;
+import javax.validation.constraints.Size;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
-import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -31,6 +31,8 @@ public class AppUser implements UserDetails {
     };
     /**
      */
+    @Size(min = 3, max = 30)
+    @Column(unique = true)
     private String username;
 
     /**
@@ -39,6 +41,7 @@ public class AppUser implements UserDetails {
 
     /**
      */
+    @Size(min = 3, max = 30)
     private String password;
 
     /**
