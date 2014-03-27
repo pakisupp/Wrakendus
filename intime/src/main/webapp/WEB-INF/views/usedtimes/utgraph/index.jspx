@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+	<spring:url value="/jsc/jquery.js" var="jquery_js_url" />
+	<spring:url value="/jsc/jquery.flot.js" var="flot_js_url" />
+
+	<script src="${jquery_js_url}" type="text/javascript">
+	<!-- //required for FF3 and Opera -->
+		
+	</script>
+	<script src="${flot_js_url}" type="text/javascript">
+	<!-- //required for FF3 and Opera -->
+		
+	</script>
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<spring:message code="label_usedtimes_utgraph_index" htmlEscape="false"
+		var="title" />
+	<util:panel id="title" title="Graph">
+		<spring:message code="application_name" htmlEscape="false"
+			var="app_name" />
+		<h3>
+			<spring:message arguments="${test}" code="welcome_titlepane" />
+		</h3>
+		<script type="text/javascript">
+			// <![CDATA[
+			$( document ).ready(function() {
+// 				$(function() {
+
+				var d1 = [];
+				for (var i = 0; i < 14; i += 0.5) {
+					d1.push([ i, Math.sin(i) ]);
+				}
+
+				var d2 = [ [ 0, 3 ], [ 4, 8 ], [ 8, 5 ], [ 9, 13 ] ];
+
+				var d3 = [];
+				for (var i = 0; i < 14; i += 0.5) {
+					d3.push([ i, Math.cos(i) ]);
+				}
+
+				var d4 = [];
+				for (var i = 0; i < 14; i += 0.1) {
+					d4.push([ i, Math.sqrt(i * 10) ]);
+				}
+
+				var d5 = [];
+				for (var i = 0; i < 14; i += 0.5) {
+					d5.push([ i, Math.sqrt(i) ]);
+				}
+
+				var d6 = [];
+				for (var i = 0; i < 14; i += 0.5 + Math.random()) {
+					d6.push([ i, Math.sqrt(2 * i + Math.sin(i) + 5) ]);
+				}
+
+				$.plot("#placeholder", [ {
+					data : d1,
+					lines : {
+						show : true,
+						fill : true
+					}
+				}, {
+					data : d2,
+					bars : {
+						show : true
+					}
+				}, {
+					data : d3,
+					points : {
+						show : true
+					}
+				}, {
+					data : d4,
+					lines : {
+						show : true
+					}
+				}, {
+					data : d5,
+					lines : {
+						show : true
+					},
+					points : {
+						show : true
+					}
+				}, {
+					data : d6,
+					lines : {
+						show : true,
+						steps : true
+					}
+				} ]);
+// 				});
+
+				// Add the Flot version string to the footer
+
+				$("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
+			});
+			// ]]>
+		</script>
+		<div id="placeholder" class="demo-placeholder" style="height:500px; width: 500px"></div>
+	</util:panel>
+</div>
