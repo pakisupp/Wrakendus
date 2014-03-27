@@ -10,7 +10,6 @@
         <menu:category id="c_usedtime" z="4AVSb7eW5GVprJ4sI2rNbtaN3MI=">
             <menu:item id="i_usedtime_new" messageCode="global_menu_new" url="/usedtimes?form" z="OUs7nHnVMC/YLbGa/MY/kXAO6FQ="/>
             <menu:item id="i_usedtime_list" messageCode="global_menu_list" url="/usedtimes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="BCC/M7E1ZkuC7pKv2r8zZEfNu5w="/>
-            <menu:item id="i_usedtime_graph" messageCode="global_menu_graph" url="/usedtimes/graph" z=""/>
         </menu:category>
         <security:authorize access="hasRole('ROLE_ADMIN')">
             <menu:category id="c_appuser" z="cRddFjEd+tY/sB3uFILzC627HG4=">

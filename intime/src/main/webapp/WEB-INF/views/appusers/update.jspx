@@ -3,8 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_ut_intime_domain_AppUser" modelAttribute="appUser" path="/appusers" versionField="Version" z="f2nUdqgH7SAl2IeC+Ot9fTDo2Ts=">
-        <field:input field="username" id="c_ee_ut_intime_domain_AppUser_username" z="CIgjXzzfj1ohrNBBRgtF4Gt8+ak="/>
-        <field:input field="password" id="c_ee_ut_intime_domain_AppUser_password" z="Y6j64uP2ZlHvSG4YjW2FVAGY8aU="/>
+        <field:input field="username" id="c_ee_ut_intime_domain_AppUser_username" max="30" min="3" required="true" z="duz3zJ/UJcfN7GpLwJdWitct5+Q="/>
+        <field:input field="password" id="c_ee_ut_intime_domain_AppUser_password" max="30" min="3" required="true" z="RZ85w3MlhdPykvGpivFQUODcajY="/>
         <field:input field="eMail" id="c_ee_ut_intime_domain_AppUser_eMail" z="2rXChjr8XDy8apIciv/OSLkbxtU="/>
         <field:input field="fullName" id="c_ee_ut_intime_domain_AppUser_fullName" z="EwnN2mNEFJhevfa6SddOiPqowDo="/>
         <field:input field="openIdIdentifier" id="c_ee_ut_intime_domain_AppUser_openIdIdentifier" z="p7GhCpTZHt95/PBUXY89lqxQHAo="/>

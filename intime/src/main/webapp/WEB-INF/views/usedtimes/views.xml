@@ -13,7 +13,4 @@
 <definition extends="default" name="usedtimes/update">
         <put-attribute name="body" value="/WEB-INF/views/usedtimes/update.jspx"/>
     </definition>
-<definition extends="default" name="usedtimes/graph">
-        <put-attribute name="body" value="/WEB-INF/views/usedtimes/graph.jspx"/>
-    </definition>
 </tiles-definitions>

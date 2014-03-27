@@ -106,9 +106,4 @@ privileged aspect UsedTimeController_Roo_Controller {
         return pathSegment;
     }
     
-    @RequestMapping(value = "/usedtimes/graph", method = RequestMethod.GET, produces = "text/html")
-    public String UsedTimeController.graph(Model uiModel) {
-    	uiModel.addAttribute("test", "testValue");
-    	return "usedtimes/graph";
-    }
 }
