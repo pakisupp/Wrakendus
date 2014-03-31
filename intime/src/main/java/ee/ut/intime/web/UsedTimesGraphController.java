@@ -1,4 +1,7 @@
 package ee.ut.intime.web;
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -7,6 +10,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import ee.ut.intime.domain.UsedTime;
+import ee.ut.intime.web.jsonmodel.GraphPoint;
 
 @RequestMapping("/usedtimes/utgraph/**")
 @Controller
@@ -21,7 +28,7 @@ public class UsedTimesGraphController {
     
     @RequestMapping(method = RequestMethod.GET, value = "index")
     public String get(ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {
-    	modelMap.addAttribute("test", "testValue");
+    	modelMap.addAttribute("test", "Statistika");
     	System.out.println("misiganes");
 		return "usedtimes/utgraph/index";
     }
@@ -30,4 +37,23 @@ public class UsedTimesGraphController {
     public String index() {
         return "usedtimes/utgraph/index";
     }
+    
+	@RequestMapping(value="all", headers ={"Accept=application/json"}, method = RequestMethod.GET)
+	public @ResponseBody GraphPoint getPoints(){
+		List data = new LinkedList<List>();
+		List <UsedTime> times = UsedTime.findAllUsedTimes();
+		
+		for(UsedTime usedTime : times){
+			
+			List point = new LinkedList();
+			point.add(usedTime.getWorkDate().getTime());
+			point.add(usedTime.getHours());
+			data.add(point);
+		}
+		GraphPoint ret = new GraphPoint();
+		ret.setLabel("tunnid");
+		ret.setData(data);
+		return ret;
+	}
+    
 }

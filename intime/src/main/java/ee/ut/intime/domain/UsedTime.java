@@ -11,8 +11,8 @@ import org.springframework.roo.addon.web.mvc.controller.json.RooWebJson;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord
 @RooWebJson(jsonObject = UsedTime.class)
+@RooJpaActiveRecord(finders = { "findUsedTimesByOwner" })
 public class UsedTime {
 
     /**

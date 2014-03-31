@@ -4,15 +4,22 @@
 	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
 	<spring:url value="/jsc/jquery.js" var="jquery_js_url" />
 	<spring:url value="/jsc/jquery.flot.js" var="flot_js_url" />
+	<spring:url value="/jsc/jquery.flot.time.js" var="flot_time_js_url" />
 
 	<script src="${jquery_js_url}" type="text/javascript">
 	<!-- //required for FF3 and Opera -->
 		
 	</script>
+
 	<script src="${flot_js_url}" type="text/javascript">
 	<!-- //required for FF3 and Opera -->
 		
 	</script>
+	
+	<script src="${flot_time_js_url}" type="text/javascript">
+		
+	</script>
+
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
 	<spring:message code="label_usedtimes_utgraph_index" htmlEscape="false"
@@ -21,77 +28,54 @@
 		<spring:message code="application_name" htmlEscape="false"
 			var="app_name" />
 		<h3>
-			<spring:message arguments="${test}" code="welcome_titlepane" />
+			<spring:message arguments="${test}" code="global_generic" />
 		</h3>
 		<script type="text/javascript">
 			// <![CDATA[
-			$( document ).ready(function() {
-// 				$(function() {
+			// 			$( document ).ready(function() {
+			$(function() {
 
-				var d1 = [];
-				for (var i = 0; i < 14; i += 0.5) {
-					d1.push([ i, Math.sin(i) ]);
+				var options = {
+				        lines: { show: true },
+				        points: { show: true },
+				        xaxis: {
+				        	mode: "time"
+				        }
+				    };
+				
+				console.log("Starting to fetch");
+				// then fetch the data with jQuery
+				function onDataReceived(series) {
+					console.log("OnDataReceived");
+					data = [];
+					// extract the first coordinate pair so you can see that
+					// data is now an ordinary Javascript object
+// 					var firstcoordinate = '(' + series.data[0][0] + ', '
+// 							+ series.data[0][1] + ')';
+
+// 					console.log(
+// 							'Fetched ' + series.label + ', first point: '
+// 									+ firstcoordinate);
+
+					// let's add it to our current data
+// 					if (!alreadyFetched[series.label]) {
+// 						alreadyFetched[series.label] = true;
+// 						data.push(series);
+// 					}
+
+					// and plot all we got
+					data.push(series);
+					$.plot("#placeholder", data, options);
+					console.log("Starting to plot");
 				}
 
-				var d2 = [ [ 0, 3 ], [ 4, 8 ], [ 8, 5 ], [ 9, 13 ] ];
-
-				var d3 = [];
-				for (var i = 0; i < 14; i += 0.5) {
-					d3.push([ i, Math.cos(i) ]);
-				}
-
-				var d4 = [];
-				for (var i = 0; i < 14; i += 0.1) {
-					d4.push([ i, Math.sqrt(i * 10) ]);
-				}
-
-				var d5 = [];
-				for (var i = 0; i < 14; i += 0.5) {
-					d5.push([ i, Math.sqrt(i) ]);
-				}
-
-				var d6 = [];
-				for (var i = 0; i < 14; i += 0.5 + Math.random()) {
-					d6.push([ i, Math.sqrt(2 * i + Math.sin(i) + 5) ]);
-				}
-
-				$.plot("#placeholder", [ {
-					data : d1,
-					lines : {
-						show : true,
-						fill : true
-					}
-				}, {
-					data : d2,
-					bars : {
-						show : true
-					}
-				}, {
-					data : d3,
-					points : {
-						show : true
-					}
-				}, {
-					data : d4,
-					lines : {
-						show : true
-					}
-				}, {
-					data : d5,
-					lines : {
-						show : true
-					},
-					points : {
-						show : true
-					}
-				}, {
-					data : d6,
-					lines : {
-						show : true,
-						steps : true
-					}
-				} ]);
-// 				});
+				$.ajax({
+					url : 'all',
+					method : 'GET',
+					dataType : 'json',
+					success : onDataReceived
+				});
+				console.log("after ajax call");
 
 				// Add the Flot version string to the footer
 
@@ -99,6 +83,7 @@
 			});
 			// ]]>
 		</script>
-		<div id="placeholder" class="demo-placeholder" style="height:500px; width: 500px"></div>
+		<div id="placeholder" class="demo-placeholder"
+			style="height: 400px; width: 500px"></div>
 	</util:panel>
 </div>
