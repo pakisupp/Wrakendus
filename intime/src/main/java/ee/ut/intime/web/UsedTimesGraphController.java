@@ -29,7 +29,7 @@ public class UsedTimesGraphController {
     @RequestMapping(method = RequestMethod.GET, value = "index")
     public String get(ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {
     	modelMap.addAttribute("test", "Statistika");
-    	System.out.println("misiganes");
+//    	System.out.println("misiganes");
 		return "usedtimes/utgraph/index";
     }
 

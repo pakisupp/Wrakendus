@@ -36,8 +36,8 @@
 			$(function() {
 
 				var options = {
-				        lines: { show: true },
-				        points: { show: true },
+				        bars: { show: true, 
+				        		lineWidth: 4},
 				        xaxis: {
 				        	mode: "time"
 				        }
@@ -52,16 +52,9 @@
 					// data is now an ordinary Javascript object
 // 					var firstcoordinate = '(' + series.data[0][0] + ', '
 // 							+ series.data[0][1] + ')';
-
 // 					console.log(
 // 							'Fetched ' + series.label + ', first point: '
 // 									+ firstcoordinate);
-
-					// let's add it to our current data
-// 					if (!alreadyFetched[series.label]) {
-// 						alreadyFetched[series.label] = true;
-// 						data.push(series);
-// 					}
 
 					// and plot all we got
 					data.push(series);
@@ -83,7 +76,6 @@
 			});
 			// ]]>
 		</script>
-		<div id="placeholder" class="demo-placeholder"
-			style="height: 400px; width: 500px"></div>
+		<div id="placeholder" class="demo-placeholder"></div>
 	</util:panel>
 </div>

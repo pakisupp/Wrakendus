@@ -4,6 +4,7 @@
 package ee.ut.intime.domain;
 
 import ee.ut.intime.domain.AppUser;
+import ee.ut.intime.domain.Subject;
 import ee.ut.intime.domain.UsedTime;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -15,6 +16,14 @@ privileged aspect UsedTime_Roo_Finder {
         EntityManager em = UsedTime.entityManager();
         TypedQuery q = em.createQuery("SELECT COUNT(o) FROM UsedTime AS o WHERE o.owner = :owner", Long.class);
         q.setParameter("owner", owner);
+        return ((Long) q.getSingleResult());
+    }
+    
+    public static Long UsedTime.countFindUsedTimesBySubject(Subject subject) {
+        if (subject == null) throw new IllegalArgumentException("The subject argument is required");
+        EntityManager em = UsedTime.entityManager();
+        TypedQuery q = em.createQuery("SELECT COUNT(o) FROM UsedTime AS o WHERE o.subject = :subject", Long.class);
+        q.setParameter("subject", subject);
         return ((Long) q.getSingleResult());
     }
     
@@ -38,6 +47,29 @@ privileged aspect UsedTime_Roo_Finder {
         }
         TypedQuery<UsedTime> q = em.createQuery(jpaQuery, UsedTime.class);
         q.setParameter("owner", owner);
+        return q;
+    }
+    
+    public static TypedQuery<UsedTime> UsedTime.findUsedTimesBySubject(Subject subject) {
+        if (subject == null) throw new IllegalArgumentException("The subject argument is required");
+        EntityManager em = UsedTime.entityManager();
+        TypedQuery<UsedTime> q = em.createQuery("SELECT o FROM UsedTime AS o WHERE o.subject = :subject", UsedTime.class);
+        q.setParameter("subject", subject);
+        return q;
+    }
+    
+    public static TypedQuery<UsedTime> UsedTime.findUsedTimesBySubject(Subject subject, String sortFieldName, String sortOrder) {
+        if (subject == null) throw new IllegalArgumentException("The subject argument is required");
+        EntityManager em = UsedTime.entityManager();
+        String jpaQuery = "SELECT o FROM UsedTime AS o WHERE o.subject = :subject";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        TypedQuery<UsedTime> q = em.createQuery(jpaQuery, UsedTime.class);
+        q.setParameter("subject", subject);
         return q;
     }
     
