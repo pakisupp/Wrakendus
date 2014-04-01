@@ -16,9 +16,9 @@ body {
 }
 
 #wrapper {
-	width:800px;
-	min-width: 800px;
-	max-width: 800px;
+	width: 70%;
+	min-width: 720px;
+	max-width: 1500px;
 	margin-right: auto;
 	margin-left: auto;
 
@@ -44,7 +44,8 @@ body {
   	position:relative;
   	float:left;  	
   	left:0px;
-  	width:220px;
+  	width:25%;
+  	max-width: 250px;
   	margin-right:15px;
 }
 
@@ -280,47 +281,6 @@ caption {
 	font-size: 12px;
 	color: #848f73;
 	padding-bottom: 4px;
-}
-
-fieldset {
-	background: #e0e7d3;
-	padding: 8px;
-	padding-bottom: 22px;
-	border: none;
-	width: 560px;
-}
-
-fieldset label {
-	width: 70px;
-	float: left;
-	margin-top: 1.7em;
-	margin-left: 20px;
-}
-
-fieldset textfield {
-	margin: 3px;
-	height: 20px;
-	background: #e0e7d3;
-}
-
-fieldset textarea {
-	margin: 3px;
-	height: 165px;
-	background: #e0e7d3;
-}
-
-fieldset input {
-	margin: 3px;
-	height: 20px;
-	background: #e0e7d3;
-}
-
-fieldset table {
-	width: 100%;
-}
-
-fieldset th {
-	padding-left: 25px;
 }
 
 .table-buttons {
