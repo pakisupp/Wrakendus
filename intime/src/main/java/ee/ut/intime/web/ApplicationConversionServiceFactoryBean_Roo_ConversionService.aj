@@ -42,7 +42,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Subject, String> ApplicationConversionServiceFactoryBean.getSubjectToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<ee.ut.intime.domain.Subject, java.lang.String>() {
             public String convert(Subject subject) {
-                return new StringBuilder().append(subject.getCode()).append(' ').append(subject.getName()).toString();
+                return new StringBuilder().append(subject.getName()).append(' ').append(subject.getCode()).toString();
             }
         };
     }
