@@ -2,6 +2,7 @@ package ee.ut.intime.web;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import ee.ut.intime.domain.Subject;
 import ee.ut.intime.domain.UsedTime;
 import ee.ut.intime.web.jsonmodel.GraphPoint;
 
@@ -39,21 +41,31 @@ public class UsedTimesGraphController {
     }
     
 	@RequestMapping(value="all", headers ={"Accept=application/json"}, method = RequestMethod.GET)
-	public @ResponseBody GraphPoint getPoints(){
-		List data = new LinkedList<List>();
-		List <UsedTime> times = UsedTime.findAllUsedTimes();
+	public @ResponseBody List getPoints(){
 		
-		for(UsedTime usedTime : times){
+		List graphPoints = new LinkedList<GraphPoint>();
+		List <Subject> subjects = Subject.findAllSubjects();
+		
+		for(Subject subject : subjects){
 			
-			List point = new LinkedList();
-			point.add(usedTime.getWorkDate().getTime());
-			point.add(usedTime.getHours());
-			data.add(point);
+			List data = new LinkedList<List>();
+			TypedQuery<UsedTime> timesBySubject = UsedTime.findUsedTimesBySubject(subject, "workDate", "ASC");
+						
+			for(UsedTime usedTime : timesBySubject.getResultList()){
+				List point = new LinkedList();
+				point.add(usedTime.getWorkDate().getTime());
+				point.add(usedTime.getHours());
+				data.add(point);
+			}
+			
+			GraphPoint ret = new GraphPoint();
+			ret.setLabel(subject.getName());
+			ret.setData(data);
+			
+			graphPoints.add(ret);
 		}
-		GraphPoint ret = new GraphPoint();
-		ret.setLabel("tunnid");
-		ret.setData(data);
-		return ret;
+		
+		return graphPoints;
 	}
     
 }

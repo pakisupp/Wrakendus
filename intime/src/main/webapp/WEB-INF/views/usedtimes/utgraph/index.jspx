@@ -15,7 +15,7 @@
 	<!-- //required for FF3 and Opera -->
 		
 	</script>
-	
+
 	<script src="${flot_time_js_url}" type="text/javascript">
 		
 	</script>
@@ -36,39 +36,35 @@
 			$(function() {
 
 				var options = {
-				        bars: { show: true, 
-				        		lineWidth: 4},
-				        xaxis: {
-				        	mode: "time"
-				        }
-				    };
-				
-				console.log("Starting to fetch");
-				// then fetch the data with jQuery
-				function onDataReceived(series) {
-					console.log("OnDataReceived");
-					data = [];
-					// extract the first coordinate pair so you can see that
-					// data is now an ordinary Javascript object
-// 					var firstcoordinate = '(' + series.data[0][0] + ', '
-// 							+ series.data[0][1] + ')';
-// 					console.log(
-// 							'Fetched ' + series.label + ', first point: '
-// 									+ firstcoordinate);
+					lines : {
+						show : true,
+						lineWidth : 2
+					},
+					xaxis : {
+						mode : "time"
+					}
+				};
 
-					// and plot all we got
-					data.push(series);
-					$.plot("#placeholder", data, options);
-					console.log("Starting to plot");
+				// fetch the data with jQuery
+				function onDataReceived(series) {
+					// plot all we got
+					$.plot("#placeholder", series, options);
+
+					setTimeout(function() {
+						reload();
+					}, seconds);
 				}
 
-				$.ajax({
-					url : 'all',
-					method : 'GET',
-					dataType : 'json',
-					success : onDataReceived
-				});
-				console.log("after ajax call");
+				var seconds = 5000; // time in milliseconds
+				var reload = function() {
+					$.ajax({
+						url : 'all',
+						method : 'GET',
+						dataType : 'json',
+						success : onDataReceived,
+					});
+				};
+				reload();
 
 				// Add the Flot version string to the footer
 
