@@ -15,14 +15,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
     
-    public Converter<AppUser, String> ApplicationConversionServiceFactoryBean.getAppUserToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<ee.ut.intime.domain.AppUser, java.lang.String>() {
-            public String convert(AppUser appUser) {
-                return new StringBuilder().append(appUser.getPassword()).append(' ').append(appUser.getUsername()).append(' ').append(appUser.getEMail()).append(' ').append(appUser.getOpenIdIdentifier()).toString();
-            }
-        };
-    }
-    
     public Converter<Long, AppUser> ApplicationConversionServiceFactoryBean.getIdToAppUserConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, ee.ut.intime.domain.AppUser>() {
             public ee.ut.intime.domain.AppUser convert(java.lang.Long id) {

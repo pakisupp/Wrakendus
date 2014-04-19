@@ -56,8 +56,7 @@ public class UsedTimesGraphController {
 		for (Subject subject : subjects) {
 
 			List data = new LinkedList<List>();
-			Query timesBySubject = UsedTime.findUsedTimesBySubjectGroupByDate(
-					subject, "workDate", "ASC");
+			Query timesBySubject = UsedTime.findUsedTimesBySubjectSortAndGroupByDate(subject);
 
 			@SuppressWarnings("unchecked")
 			List<Object[]> test = timesBySubject.getResultList();

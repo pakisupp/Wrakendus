@@ -43,7 +43,7 @@ public class UsedTime {
     @ManyToOne
     private AppUser owner;
     
-    public static Query findUsedTimesBySubjectGroupByDate(Subject subject, String sortFieldName, String sortOrder) {
+    public static Query findUsedTimesBySubjectSortAndGroupByDate(Subject subject) {
         if (subject == null) throw new IllegalArgumentException("The subject argument is required");
         EntityManager em = UsedTime.entityManager();
         String jpaQuery = "SELECT o.workDate AS date, SUM(o.hours) FROM UsedTime AS o "
