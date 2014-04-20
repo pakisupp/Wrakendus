@@ -5,6 +5,7 @@
 	<spring:url value="/jsc/jquery.js" var="jquery_js_url" />
 	<spring:url value="/jsc/jquery.flot.js" var="flot_js_url" />
 	<spring:url value="/jsc/jquery.flot.time.js" var="flot_time_js_url" />
+	<spring:url value="/jsc/graph.js" var="graph_js_url" />
 
 	<script src="${jquery_js_url}" type="text/javascript">
 	<!-- //required for FF3 and Opera -->
@@ -19,7 +20,7 @@
 	<script src="${flot_time_js_url}" type="text/javascript">
 		
 	</script>
-
+	
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
 	<spring:message code="label_usedtimes_utgraph_index" htmlEscape="false"
@@ -30,48 +31,12 @@
 		<h3>
 			<spring:message arguments="${test}" code="global_generic" />
 		</h3>
-		<script type="text/javascript">
-			// <![CDATA[
-			// 			$( document ).ready(function() {
-			$(function() {
 
-				var options = {
-					lines : {
-						show : true,
-						lineWidth : 2
-					},
-					xaxis : {
-						mode : "time"
-					}
-				};
-
-				// fetch the data with jQuery
-				function onDataReceived(series) {
-					// plot all we got
-					$.plot("#placeholder", series, options);
-
-					setTimeout(function() {
-						reload();
-					}, seconds);
-				}
-
-				var seconds = 5000; // time in milliseconds
-				var reload = function() {
-					$.ajax({
-						url : 'all',
-						method : 'GET',
-						dataType : 'json',
-						success : onDataReceived,
-					});
-				};
-				reload();
-
-				// Add the Flot version string to the footer
-
-				$("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
-			});
-			// ]]>
+		<script src="${graph_js_url}" type="text/javascript">
+			reload();
 		</script>
+
 		<div id="placeholder" class="demo-placeholder"></div>
+
 	</util:panel>
 </div>
