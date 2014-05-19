@@ -10,20 +10,21 @@ import javax.validation.constraints.Size;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @RooJavaBean
 @RooJpaActiveRecord(finders = { "findAppUsersByOpenIdIdentifier", "findAppUsersByUsername" }, table = "appuser")
 public class AppUser implements UserDetails {
 	@Transient
-	private static final GrantedAuthority USER_AUTHORITY = new GrantedAuthority() {
+	public static final GrantedAuthority USER_AUTHORITY = new GrantedAuthority() {
         @Override
         public String getAuthority() {
-            return "ROLE_USER";
+            return "ROLE_USER"; 
         }
     };
     @Transient
-    private static final GrantedAuthority ADMIN_AUTHORITY = new GrantedAuthority() {
+    public static final GrantedAuthority ADMIN_AUTHORITY = new GrantedAuthority() {
         @Override
         public String getAuthority() {
             return "ROLE_ADMIN";
@@ -31,7 +32,7 @@ public class AppUser implements UserDetails {
     };
     /**
      */
-    @Size(min = 3, max = 30)
+    @Size(min = 3, max = 31)
     @Column(unique = true)
     private String username;
 
@@ -63,6 +64,10 @@ public class AppUser implements UserDetails {
         }
         return ret;
     }
+	
+	public boolean isAdmin() {
+		return getAuthorities().contains(ADMIN_AUTHORITY);
+	}
 
     @Override
     public String getPassword() {

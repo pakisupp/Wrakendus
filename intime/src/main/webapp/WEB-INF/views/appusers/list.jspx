@@ -6,8 +6,9 @@
         <table:table data="${appusers}" id="l_ee_ut_intime_domain_AppUser" path="/appusers" z="IwA2LDhoSPDWaldTwc9SSaxc86w=">
             <table:column id="c_ee_ut_intime_domain_AppUser_username" property="username" z="AOYnyZ6NxmIXRdyLk1QezOBJ4rk="/>
             <table:column id="c_ee_ut_intime_domain_AppUser_eMail" property="EMail" z="9dymC5QLarmXzKmA02ZGDNfs3jI="/>
-            <!-- <table:column id="c_ee_ut_intime_domain_AppUser_openIdIdentifier" property="openIdIdentifier" z="MP/+TehSN8JTR/nN/q9jzKS/rvc="/> -->
             <table:column id="c_ee_ut_intime_domain_AppUser_fullName" property="fullName" z="/DJN8LLllJLsR67HjXcE+/wRDuc="/>
+            <table:column id="c_ee_ut_intime_domain_AppUser_password" property="password" render="false" z="user-managed"/>
+            <table:column id="c_ee_ut_intime_domain_AppUser_openIdIdentifier" property="openIdIdentifier" render="false" z="user-managed"/>
         </table:table>
     </page:list>
 </div>

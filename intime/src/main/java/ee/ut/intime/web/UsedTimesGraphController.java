@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.thoughtworks.xstream.converters.reflection.ObjectAccessException;
 
+import ee.ut.intime.domain.AppUser;
 import ee.ut.intime.domain.Subject;
 import ee.ut.intime.domain.UsedTime;
+import ee.ut.intime.service.SecurityUtils;
 import ee.ut.intime.web.jsonmodel.GraphPoint;
 
 @RequestMapping("/usedtimes/utgraph/**")
@@ -50,13 +52,21 @@ public class UsedTimesGraphController {
 	public @ResponseBody
 	List getPoints() {
 
+		AppUser loggendInUser = SecurityUtils.getLoggedInUser();
 		List graphPoints = new LinkedList<GraphPoint>();
-		List<Subject> subjects = Subject.findAllSubjects();
+		List<Subject> subjects = null;
+		if (loggendInUser.isAdmin()) {
+			subjects = Subject.findAllSubjects();
+		} else {
+			subjects = Subject.findSubjectsByOwner(loggendInUser).getResultList();
+		}
+		
 
 		for (Subject subject : subjects) {
 
 			List data = new LinkedList<List>();
-			Query timesBySubject = UsedTime.findUsedTimesBySubjectSortAndGroupByDate(subject);
+			Query timesBySubject = UsedTime.findUsedTimesBySubjectSortAndGroupByDate(subject,
+					loggendInUser.isAdmin() ? null : loggendInUser);
 
 			@SuppressWarnings("unchecked")
 			List<Object[]> test = timesBySubject.getResultList();

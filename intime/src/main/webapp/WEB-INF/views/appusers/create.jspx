@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_ut_intime_domain_AppUser" modelAttribute="appUser" path="/appusers" render="${empty dependencies}" z="G5rssVXKelgKKQYIKUEwfa9DTDw=">
-        <field:input field="username" id="c_ee_ut_intime_domain_AppUser_username" max="30" min="3" required="true" z="duz3zJ/UJcfN7GpLwJdWitct5+Q="/>
+        <field:textarea field="username" id="c_ee_ut_intime_domain_AppUser_username" z="6/7m/Eg+t7KPuX7dYK56AwF6Q5o="/>
         <field:input field="password" id="c_ee_ut_intime_domain_AppUser_password" max="30" min="3" required="true" z="RZ85w3MlhdPykvGpivFQUODcajY="/>
         <field:input field="eMail" id="c_ee_ut_intime_domain_AppUser_eMail" z="2rXChjr8XDy8apIciv/OSLkbxtU="/>
         <field:input field="fullName" id="c_ee_ut_intime_domain_AppUser_fullName" z="EwnN2mNEFJhevfa6SddOiPqowDo="/>
