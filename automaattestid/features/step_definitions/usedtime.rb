@@ -30,3 +30,8 @@ end
 Then(/^modified usedtime is listed$/) do
   pending
 end
+
+Then(/^used time is not shown$/) do
+  page.should have_no_content($test_hours)
+  page.should have_no_content($test_subjectname)
+end

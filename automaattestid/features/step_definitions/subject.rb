@@ -28,3 +28,8 @@ Then(/^modified subject is listed$/) do
   pending
 end
 
+
+Then(/^subject is not shown$/) do
+  page.should have_no_content($test_subjectname)
+  page.should have_no_content($test_subjectcode)
+end

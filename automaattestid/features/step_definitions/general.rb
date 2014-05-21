@@ -11,6 +11,7 @@ end
 
 When(/^I log out$/) do
   visit('http://95.85.35.177:8080/intime/resources/j_spring_security_logout')
+  page.has_content?('Login')
 end
 
 And(/^make sure English is selected$/) do
@@ -31,7 +32,9 @@ And(/^delete inserted value$/) do
 end
 
 And(/^delete the last value$/) do
-  click_on('Delete') #Ambiguous match, found 4 elements matching link or button "Delete"
+  #click_on('Delete') #Ambiguous match, found 4 elements matching link or button "Delete"
+  page.all(:link,"Delete")[-1].click #NoMethodError
+  #click_on(page.all(:link,"Delete")[-1]) #Ambiguous match, found 13 elements matching link or button
   page.driver.browser.switch_to.alert.accept
 end
 

@@ -8,6 +8,9 @@ Feature: Testing Intime main functionality
     When I open "Create new App User"
     And fill up new user form
     Then user is saved
+    When I go to home page
+    When I open "List all App Users"
+    Then new user is listed
     When I log out
     And log in with "capybara"
     Then main menu items are visible
@@ -75,23 +78,25 @@ Feature: Testing Intime main functionality
   #Scenario: Testing graph
     #When I open Intime
     #And log in with "admin"
-    #When I open "i_controller__usedtimes_utgraphindex_id"
+    #When I open "Graph"
 
 
   @Delete
   Scenario: Deleting created data
     When I open Intime
-    #And log in with "capybara"
-    #And make sure English is selected
-    #When I open "List all Used Times"
-    #And delete inserted value
-    #When I open "List all Subjects"
-    #And delete inserted value
-    #When I log out
-    And log in with "admin"
+    And log in with "capybara"
     And make sure English is selected
+    When I open "List all Used Times"
+    And delete inserted value
+    Then used time is not shown
+    When I open "List all Subjects"
+    And delete inserted value
+    Then subject is not shown
+    When I log out
+    And log in with "admin"
     When I open "List all App Users"
     And delete the last value
+    Then user is not shown
     When I log out
     And log in with "capybara"
     Then login error message is given

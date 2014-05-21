@@ -9,6 +9,8 @@ end
 
 Then(/^new user is listed$/) do
   page.has_content?($test_username)
+  page.has_content?($test_mail)
+  page.has_content?($test_name)
 end
 
 Then(/^user is saved$/) do
@@ -34,4 +36,8 @@ Then(/^main menu items are visible$/) do
   page.has_content?('Create new Used Time')
   page.has_content?('List all Used Times')
   page.has_content?('Graph')
+end
+
+Then(/^user is not shown$/) do
+  page.should have_no_content($test_username)
 end
