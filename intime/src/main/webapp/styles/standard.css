@@ -5,6 +5,7 @@ and (max-device-width : 480px) {
 /* Styles */
 	body {
 		font-size: 125%;
+		line-height: 2.000em;
 	}
 }
  
@@ -14,6 +15,7 @@ and (min-width : 321px) {
 /* Styles */
 	body {
 		font-size: 125%;
+		line-height: 2.000em;
 	}
 }
  
@@ -23,6 +25,7 @@ and (max-width : 320px) {
 /* Styles */
 	body {
 		font-size: 125%;
+		line-height: 2.000em;
 	}
 }
  
@@ -67,6 +70,7 @@ and (min-width : 1224px) {
 /* Styles */
 	body {
 		font-size: 100%;
+		line-height: 1.500em;
 	}
 }
  
@@ -76,6 +80,7 @@ and (min-width : 1824px) {
 /* Styles */
 	body {
 		font-size: 100%;
+		line-height: 1.500em;
 	}
 }
  
@@ -86,6 +91,7 @@ only screen and (min-device-pixel-ratio : 1.5) {
 /* Styles */
 	body {
 		font-size: 125%;
+		line-height: 1.500em;
 	}
 }
 body, div, td {
@@ -93,6 +99,7 @@ body, div, td {
 
     color: #666;
     font: 100% Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+	line-height: 100%;
 }
 body {
     text-align: center;
