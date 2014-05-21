@@ -3,18 +3,27 @@
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
 /* Styles */
+	body {
+		font-size: 125%;
+	}
 }
  
 /* Smartphones (landscape) ----------- */
 @media only screen
 and (min-width : 321px) {
 /* Styles */
+	body {
+		font-size: 125%;
+	}
 }
  
 /* Smartphones (portrait) ----------- */
 @media only screen
 and (max-width : 320px) {
 /* Styles */
+	body {
+		font-size: 125%;
+	}
 }
  
 /* iPads (portrait and landscape) ----------- */
@@ -22,6 +31,10 @@ and (max-width : 320px) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
 /* Styles */
+	body {
+		font-size: 75%;
+		line-height: 1.500em;
+	}
 }
  
 /* iPads (landscape) ----------- */
@@ -30,6 +43,10 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape) {
 /* Styles */
+	body {
+		font-size: 75%;
+		line-height: 1.500em;
+	}
 }
  
 /* iPads (portrait) ----------- */
@@ -38,18 +55,28 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
 /* Styles */
+	body {
+		font-size: 75%;
+		line-height: 1.500em;
+	}
 }
  
 /* Desktops and laptops ----------- */
 @media only screen
 and (min-width : 1224px) {
 /* Styles */
+	body {
+		font-size: 100%;
+	}
 }
  
 /* Large screens ----------- */
 @media only screen
 and (min-width : 1824px) {
 /* Styles */
+	body {
+		font-size: 100%;
+	}
 }
  
 /* iPhone 4 ----------- */
@@ -57,6 +84,9 @@ and (min-width : 1824px) {
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
 /* Styles */
+	body {
+		font-size: 125%;
+	}
 }
 body, div, td {
 
@@ -73,34 +103,34 @@ body {
 }
 #wrapper {
     width: 70%;
-    min-width: 720px;
-    max-width: 1500px;
+    min-width: 45.000em;
+    max-width: 93.750em;
     margin-right: auto;
     margin-left: auto;
-    width: expression(document.body.clientWidth > 800? "800px": "auto");
+    width: expression(document.body.clientWidth > 800? "50.000em": "auto");
     overflow: hidden;
     display: block;
 }
 #main {
     overflow: hidden;
     display: box;
-    border-radius: 6px;
+    border-radius: 0.375em;
 }
 #menu {
     background: #eafbef;
-    border-radius: 6px;
+    border-radius: 0.375em;
     padding: 0;
     position: relative;
     float: left;
     left: 0;
     width: 25%;
-    max-width: 250px;
-    margin-right: 15px;
+    max-width: 15.625em;
+    margin-right: 0.938em;
 }
 #menu ul {
     list-style: none;
     margin: 0;
-    padding: 2px 4px;
+    padding: 0.125em 0.250em;
 }
 #menu ul li {
     padding: 0;
@@ -110,8 +140,8 @@ body {
     margin: 0;
     padding: 0;
     color: #111;
-    border-radius: 6px;
-    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .1);
+    border-radius: 0.375em;
+    box-shadow: inset 0 0 0.063em 0.063em rgba(0, 0, 0, .1);
 }
 #menu h2 {
     color: #111;
@@ -119,15 +149,15 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.000em;
-    padding: 6px 10px;
-    margin: 4px 0;
+    padding: 0.375em 0.625em;
+    margin: 0.250em 0;
     vertical-align: middle;
 }
 #menu a {
     color: #48a964;
     background: #cbfeda;
     text-decoration: none;
-    padding: 2px 10px;
+    padding: 0.125em 0.625em;
 }
 #menu a:hover {
     color: #48a964;
@@ -135,8 +165,8 @@ body {
 }
 #footer {
     border: none;
-    margin-top: 15px;
-    border-top: 1px solid #999;
+    margin-top: 0.938em;
+    border-top: 0.063em solid #999;
 }
 #footer .new {
     float: left;
@@ -146,7 +176,7 @@ body {
 }
 .quicklinks {
     clear: both;
-    padding-bottom: 15px;
+    padding-bottom: 0.938em;
 }
 .quicklinks span {
     float: right;
@@ -155,16 +185,16 @@ table.navigation {
     border: 0;
 }
 label {
-    width: 100px;
+    width: 6.250em;
     float: left;
-    margin-left: 5px;
+    margin-left: 0.313em;
     margin-top: 0;
 }
 input {
-    height: 20px;
+    height: 1.250em;
 }
 input, textarea, select {
-    border: 1px solid #b3b3b3;
+    border: 0.063em solid #b3b3b3;
 }
 input.image {
     border: none;
@@ -172,19 +202,19 @@ input.image {
     vertical-align: middle;
 }
 submit {
-    height: 25px;
+    height: 1.563em;
 }
 div {
     text-align: left;
 }
 div .box {
     display: block;
-    margin-left: 105px;
+    margin-left: 6.563em;
 }
 a.menu, a.menu:link, a.menu:visited {
     display: block;
-    width: 150px;
-    height: 25px;
+    width: 9.375em;
+    height: 1.563em;
 }
 h1, h2, h3 {
     font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
@@ -211,7 +241,7 @@ h4 {
     color: red;
     font-weight: 700;
     display: block;
-    margin-left: 105px;
+    margin-left: 6.563em;
 }
 a {
     text-decoration: underline;
@@ -220,7 +250,7 @@ a {
 a img {
     border: 0 none;
     vertical-align: middle;
-    border-radius: 6px;
+    border-radius: 0.375em;
 }
 tr:nth-child(odd) {
     background: #fff;
@@ -241,7 +271,7 @@ a:visited {
     color: #48a964;
 }
 li {
-    padding-top: 5px;
+    padding-top: 0.313em;
     text-align: left;
 }
 ul li {
@@ -250,17 +280,17 @@ ul li {
 }
 table {
     background: #eee;
-    margin: 2px 0 0;
-    border: 1px solid #bbb;
+    margin: 0.125em 0 0;
+    border: 0.063em solid #bbb;
     border-collapse: collapse;
     width: 100%}
 table table {
-    margin: -5px 0;
+    margin: -0.313em 0;
     border: 0 solid #e0e7d3;
     width: 100%}
 table td, table th {
-    padding: 2px;
-    border: 1px solid #ccc;
+    padding: 0.125em;
+    border: 0.063em solid #ccc;
 }
 table td form {
     text-align: center;
@@ -283,7 +313,7 @@ table a:link {
     color: #303030;
 }
 .utilbox {
-    width: 18px;
+    width: 1.125em;
 }
 caption {
     caption-side: top;
@@ -291,7 +321,7 @@ caption {
     text-align: left;
     font-size: 1.000em;
     color: #848f73;
-    padding-bottom: 4px;
+    padding-bottom: 0.250em;
 }
 .table-buttons {
     border: none;
@@ -301,48 +331,48 @@ caption {
     border: none;
 }
 .submit input {
-    border: 1px solid #bbb;
+    border: 0.063em solid #bbb;
     color: #777;
-    padding: 2px 7px;
+    padding: 0.125em 0.438em;
     font-size: 0.688em;
     text-transform: uppercase;
     font-weight: 700;
-    height: 24px;
+    height: 1.500em;
 }
 .updated {
     background: #ecf1e5;
     font-size: 0.688em;
-    margin-left: 2px;
-    border: 4px solid #ecf1e5;
+    margin-left: 0.125em;
+    border: 0.250em solid #ecf1e5;
 }
 .updated td {
-    padding: 2px 8px;
+    padding: 0.125em 0.500em;
     font-size: 0.688em;
     color: #888;
 }
 .dijitArrowButton {
-    height: 20px;
+    height: 1.250em;
 }
 .dijitTextArea {
     min-height: 5.5em!important;
     max-height: 22em!important;
     overflow-y: auto!important;
-    max-width: 175px;
+    max-width: 10.938em;
 }
 .RichTextEditable {
     min-height: 18em!important;
     max-height: 18em!important;
 }
 .flag {
-    height: 11px;
-    width: 16px;
+    height: 0.688em;
+    width: 1.000em;
     border-radius: 0;
 }
 .demo-placeholder {
     box-sizing: border-box;
-    width: 500px;
-    height: 400px;
-    margin: 15px auto 30px;
-    border: 1px solid #ddd;
-    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, .1);
+    width: 31.250em;
+    height: 25.000em;
+    margin: 0.938em auto 1.875em;
+    border: 0.063em solid #ddd;
+    -webkit-box-shadow: 0.313em 0.313em 0.625em rgba(0, 0, 0, .1);
 }
