@@ -1,6 +1,7 @@
 body, div, td {
     color: #666;
-    font: 100% Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font: 75% Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+	line-height: 1.5em;
 }
 body {
     text-align: center;

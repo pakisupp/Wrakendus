@@ -1,6 +1,7 @@
 body, div, td {
     color: #666;
-    font: 100% Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font: 125% Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+	line-height: 1.5em;
 }
 body {
     text-align: center;
@@ -10,12 +11,9 @@ body {
     margin-bottom: 1em;
 }
 #wrapper {
-    width: 70%;
-    min-width: 720px;
-    max-width: 1500px;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
-    width: expression(document.body.clientWidth > 800? "800px": "auto");
     overflow: hidden;
     display: block;
 }

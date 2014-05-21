@@ -57,8 +57,8 @@ privileged aspect AppUserDataOnDemand_Roo_DataOnDemand {
     
     public void AppUserDataOnDemand.setUsername(AppUser obj, int index) {
         String username = "username_" + index;
-        if (username.length() > 30) {
-            username = new Random().nextInt(10) + username.substring(1, 30);
+        if (username.length() > 31) {
+            username = new Random().nextInt(10) + username.substring(1, 31);
         }
         obj.setUsername(username);
     }
