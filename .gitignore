@@ -2,3 +2,6 @@ intime/log.roo
 intime/intimeDB.h2.db
 intime/intimeDB.lock.db
 intime/intimeDB.trace.db
+automaattestid/.idea/
+automaattestid/screenshots/
+automaattestid/report.html
