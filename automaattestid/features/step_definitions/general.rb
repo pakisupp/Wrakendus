@@ -31,10 +31,10 @@ And(/^delete inserted value$/) do
   page.driver.browser.switch_to.alert.accept
 end
 
-And(/^delete the last value$/) do
-  #click_on('Delete') #Ambiguous match, found 4 elements matching link or button "Delete"
-  page.all(:link,"Delete")[-1].click #NoMethodError
-  #click_on(page.all(:link,"Delete")[-1]) #Ambiguous match, found 13 elements matching link or button
+And(/^delete the added value$/) do
+  within(:xpath, '//tr[td//text()[contains(., "capybara")]]') do
+    click_on('Delete')
+  end
   page.driver.browser.switch_to.alert.accept
 end
 

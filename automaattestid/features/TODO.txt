@@ -16,6 +16,20 @@ Feature: Testing Intime main functionality
     Then main menu items are visible
 
 
+
+  #@User
+  #Scenario: Updating a new user
+    #When I open Intime
+    #And log in with "admin"
+    #When I open "List all App Users"
+    #And I open user form
+    #And change user data
+    #When I open "List all App Users"
+    #Then modified user is listed
+    #When I log out
+    #And log in with "capybara_modified"
+    #Then main menu items are visible
+
   @Subject
   Scenario: Making a new subject
     When I open Intime
@@ -27,6 +41,15 @@ Feature: Testing Intime main functionality
     When I go to home page
     When I open "List all Subjects"
     Then new subject is listed
+
+  #@Subject
+  #Scenario: Updating a new subject
+    #When I open Intime
+    #And log in with "capybara"
+    #When I open subject form
+    #And change subject data
+    #When I open "List all Subjects"
+    #Then modified subject is listed
 
 
   @Usedtime
@@ -40,6 +63,23 @@ Feature: Testing Intime main functionality
     When I go to home page
     When I open "List all Used Times"
     Then new usedtime is listed
+
+  #@Usedtime
+  #Scenario: Updating a new usedtime
+    #When I open Intime
+    #And log in with "capybara"
+    #When I open usedtime form
+    #And change usedtime data
+    #When I open "List all Used Times"
+    #Then modified usedtime is listed
+
+
+  #@Graph
+  #Scenario: Testing graph
+    #When I open Intime
+    #And log in with "admin"
+    #When I open "Graph"
+    #..
 
 
   @Delete
